@@ -11,7 +11,7 @@ const callbackUri = `http://localhost:8100/home`;
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
- 
+
 export class HomePageComponent implements OnInit {
 
   LIST: any = [
@@ -50,7 +50,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   async ionViewWillEnter () {
@@ -83,7 +83,7 @@ export class HomePageComponent implements OnInit {
           // console.log('button---' , this.dataService.BUTTON_COLOR);
           // console.log('text---' , this.dataService.TEXT_COLOR);
 
-          
+
         }
       },
       (error: any) => {
@@ -98,18 +98,18 @@ export class HomePageComponent implements OnInit {
     let get_previous_url = await this.dataService.getPreviousUrl()
 
     if (get_previous_url != '') {
-      
+
       let url = `/${get_previous_url}`
       this.router.navigate([ url ]);
       this.dataService.removePreviousUrl();
     }
-    
+
   }
 
   async navigate (link: any) {
 
     if (link == '/make-a-booking') {
-      
+
     }
     await this.router.navigate([link])
 
