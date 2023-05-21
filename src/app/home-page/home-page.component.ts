@@ -20,12 +20,12 @@ export class HomePageComponent implements OnInit {
         id: 1 , is_icon: false, name:'today', text: 'Book Now' ,router_link: '/make-a-booking' , image: ''
       },
       {
-        id: 2 , is_icon: true, name:'store', text: 'Online Store' , router_link: '/' , image : this.imageService.COMING_SOON
+        id: 2 , is_icon: false, name:'store', text: 'Online Store' , router_link: '/' , image : this.imageService.COMING_SOON
       },
     ],
     [
       {
-        id: 3 , is_icon: true, name:'card_giftcard', text: 'Buy a voucher',router_link: '/' , image: this.imageService.COMING_SOON
+        id: 3 , is_icon: false, name:'card_giftcard', text: 'Buy a voucher',router_link: '/buy-a-voucher' , image: this.imageService.COMING_SOON
       },
       {
         id: 4 , is_icon: false, name:'groups', text: 'About us' ,router_link: '/about-us', image: this.imageService.COMING_SOON
@@ -33,10 +33,10 @@ export class HomePageComponent implements OnInit {
     ],
     [
       {
-        id: 5 , is_icon: true, name:'rate_review', text: 'Rate us' ,router_link: '/', image: this.imageService.COMING_SOON
+        id: 5 , is_icon: false, name:'rate_review', text: 'Rate us' ,router_link: '/', image: this.imageService.COMING_SOON
       },
       {
-        id: 6 , is_icon: true, name:'person_add', text: 'Refer a friend' ,router_link: '/', image: this.imageService.COMING_SOON
+        id: 6 , is_icon: false, name:'person_add', text: 'Refer a friend' ,router_link: '/', image: this.imageService.COMING_SOON
       },
     ],
   ];
