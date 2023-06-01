@@ -1,0 +1,36 @@
+<ion-content>
+  <app-header (navigation)="navigation()" [HEADING_TEXT]="this.HEADING" [IS_BACK]="true"></app-header>
+
+  <!-- Product image and cart -->
+  <div class="green-background">
+  </div>
+  <div class="card-list">
+    <ion-grid class="product-image-section">
+      <ion-row>
+        <ion-col size="12">
+          <ion-img [src]="PRODUCT_IMG"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Product information -->
+
+    <ion-grid class="description-section">
+          <ion-text class="value">
+            {{ PRODUCT_PRICE | currency: 'EUR' }}
+          </ion-text>
+          <ion-text class="product-name"><b>{{ PRODUCT_NAME }}</b></ion-text>
+          <ion-text class="product-description">{{ PRODUCT_DESCRIPTION }}</ion-text>
+    </ion-grid>
+
+    <ion-grid class="price-cart">
+      <ion-row>
+        <ion-col size="12" class="add-to-cart">
+          <ion-button expand="block" >add to cart</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>
+<app-footer></app-footer>
