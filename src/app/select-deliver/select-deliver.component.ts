@@ -94,7 +94,7 @@ export class SelectDeliverComponent implements OnInit {
           errorElement.textContent = result.error.message;
         } else {
           console.log('result' , result);
-          // this._createPayment(result.token.id);
+          this._createPayment(result.token.id);
         }
       });
     });
@@ -110,6 +110,7 @@ export class SelectDeliverComponent implements OnInit {
       formData.append('email' , this.EMAIL);
       formData.append('token' , token);
       formData.append('amount' , amount.toString());
+      formData.append('transactionType' , String(3));
       formData.append('description' , "Online Store Payment");
       await this.apiData.presentLoading();
       console.log('token----' , token);
@@ -121,7 +122,7 @@ export class SelectDeliverComponent implements OnInit {
           if (response.id) {
             // this.RECIPT_URL = response.receiptUrl;
             await this.apiData.dismiss();
-            await this.apiData.presentAlert("Submission Success");
+            await this.apiData.presentAlertWithHeader("Payment successful", "Please check your email for further details");
           } else {
             // alert(response.details);
 
@@ -130,7 +131,7 @@ export class SelectDeliverComponent implements OnInit {
         async (error: any) => {
           // alert('server error');
           await this.apiData.dismiss();
-          await this.apiData.presentAlert("Submission Failed");
+          await this.apiData.presentAlertWithHeader("Payment Failed","Something Went Wrong. Please try later.");
         }
       );
     }
